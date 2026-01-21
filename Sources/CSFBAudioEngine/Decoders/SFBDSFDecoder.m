@@ -193,7 +193,9 @@ static void MatrixTransposeNaive(const unsigned char * restrict A, unsigned char
 		return NO;
 	}
 
-	if(![_inputSource readUInt32LittleEndian:&samplingFrequency error:nil] || (samplingFrequency != kSFBSampleRateDSD64 && samplingFrequency != kSFBSampleRateDSD128)) {
+	// Allow higher-rate DSD (e.g. DSD256) in DSF.
+	// Historically this decoder only accepted DSD64/DSD128.
+	if(![_inputSource readUInt32LittleEndian:&samplingFrequency error:nil] || !(samplingFrequency == kSFBSampleRateDSD64 || samplingFrequency == kSFBSampleRateDSD128 || samplingFrequency == kSFBSampleRateDSD256 || samplingFrequency == kSFBSampleRateDSD64Variant || samplingFrequency == kSFBSampleRateDSD128Variant || samplingFrequency == kSFBSampleRateDSD256Variant)) {
 		os_log_error(gSFBDSDDecoderLog, "Unexpected sample rate in 'fmt ': %u", samplingFrequency);
 		if(error)
 			*error = CreateInvalidDSFFileError(_inputSource.url);

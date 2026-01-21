@@ -38,6 +38,10 @@ FOUNDATION_EXPORT const unsigned char SFBAudioEngineVersionString [];
 #import <SFBAudioEngine/SFBAudioMetadata.h>
 #import <SFBAudioEngine/SFBAudioFile.h>
 
+// Random access metadata (remote deep analysis)
+#import <SFBAudioEngine/SFBRandomAccessDataSource.h>
+#import <SFBAudioEngine/SFBRemoteAudioFile.h>
+
 #import <SFBAudioEngine/SFBReplayGainAnalyzer.h>
 
 #import <SFBAudioEngine/SFBAudioExporter.h>
