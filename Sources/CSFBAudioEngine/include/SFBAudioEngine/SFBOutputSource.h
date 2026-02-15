@@ -1,7 +1,8 @@
 //
-// Copyright (c) 2020-2026 Stephen F. Booth <me@sbooth.org>
+// SPDX-FileCopyrightText: 2020 Stephen F. Booth <contact@sbooth.dev>
+// SPDX-License-Identifier: MIT
+//
 // Part of https://github.com/sbooth/SFBAudioEngine
-// MIT license
 //
 
 #import <Foundation/Foundation.h>
@@ -9,7 +10,8 @@
 NS_ASSUME_NONNULL_BEGIN
 
 /// An output source
-NS_SWIFT_NAME(OutputSource) @interface SFBOutputSource : NSObject
+NS_SWIFT_NAME(OutputSource)
+@interface SFBOutputSource : NSObject
 
 /// Returns an initialized `SFBOutputSource` object for the given URL or `nil` on failure
 /// - parameter url: The URL
@@ -30,10 +32,10 @@ NS_SWIFT_NAME(OutputSource) @interface SFBOutputSource : NSObject
 - (instancetype)init NS_UNAVAILABLE;
 
 /// The URL corresponding to this output source or `nil` if none
-@property (nonatomic, nullable, readonly) NSURL * url;
+@property(nonatomic, nullable, readonly) NSURL *url;
 
 /// The underlying data object for this output source or `nil` if none
-@property (nonatomic, nullable, readonly) NSData * data;
+@property(nonatomic, nullable, readonly) NSData *data;
 
 /// Opens the output source for writing
 /// - parameter error: An optional pointer to an `NSError` object to receive error information
@@ -46,7 +48,7 @@ NS_SWIFT_NAME(OutputSource) @interface SFBOutputSource : NSObject
 - (BOOL)closeReturningError:(NSError **)error NS_SWIFT_NAME(close());
 
 /// `YES` if the output source is open
-@property (nonatomic, readonly) BOOL isOpen;
+@property(nonatomic, readonly) BOOL isOpen;
 
 /// Reads bytes from the input
 /// - parameter buffer: A buffer to receive data
@@ -54,7 +56,10 @@ NS_SWIFT_NAME(OutputSource) @interface SFBOutputSource : NSObject
 /// - parameter bytesRead: The number of bytes actually read
 /// - parameter error: An optional pointer to an `NSError` object to receive error information
 /// - returns: `YES` if any bytes were read, `NO` otherwise
-- (BOOL)readBytes:(void *)buffer length:(NSInteger)length bytesRead:(NSInteger *)bytesRead error:(NSError **)error NS_REFINED_FOR_SWIFT;
+- (BOOL)readBytes:(void *)buffer
+           length:(NSInteger)length
+        bytesRead:(NSInteger *)bytesRead
+            error:(NSError **)error NS_REFINED_FOR_SWIFT;
 
 /// Writes bytes to the output
 /// - parameter buffer: A buffer of data to write
@@ -62,10 +67,13 @@ NS_SWIFT_NAME(OutputSource) @interface SFBOutputSource : NSObject
 /// - parameter bytesWritten: The number of bytes actually written
 /// - parameter error: An optional pointer to an `NSError` object to receive error information
 /// - returns: `YES` if any bytes were written, `NO` otherwise
-- (BOOL)writeBytes:(const void *)buffer length:(NSInteger)length bytesWritten:(NSInteger *)bytesWritten error:(NSError **)error NS_REFINED_FOR_SWIFT;
+- (BOOL)writeBytes:(const void *)buffer
+              length:(NSInteger)length
+        bytesWritten:(NSInteger *)bytesWritten
+               error:(NSError **)error NS_REFINED_FOR_SWIFT;
 
 /// `YES` if the end of input has been reached
-@property (nonatomic, readonly) BOOL atEOF;
+@property(nonatomic, readonly) BOOL atEOF;
 
 /// Returns the current offset in the output, in bytes
 - (BOOL)getOffset:(NSInteger *)offset error:(NSError **)error NS_REFINED_FOR_SWIFT;
@@ -74,7 +82,7 @@ NS_SWIFT_NAME(OutputSource) @interface SFBOutputSource : NSObject
 - (BOOL)getLength:(NSInteger *)length error:(NSError **)error NS_REFINED_FOR_SWIFT;
 
 /// `YES` if the output is seekable
-@property (nonatomic, readonly) BOOL supportsSeeking;
+@property(nonatomic, readonly) BOOL supportsSeeking;
 
 /// Seeks to the specified byte offset
 /// - parameter offset: The desired offset, in bytes
@@ -92,7 +100,7 @@ NS_SWIFT_NAME(OutputSource) @interface SFBOutputSource : NSObject
 - (BOOL)writeData:(NSData *)data error:(NSError **)error;
 @end
 
-#pragma mark - Typed and Byte-Ordered Writing
+// MARK: - Typed and Byte-Ordered Writing
 
 /// Signed integer writing
 @interface SFBOutputSource (SFBSignedIntegerWriting)
@@ -180,17 +188,17 @@ NS_SWIFT_NAME(OutputSource) @interface SFBOutputSource : NSObject
 - (BOOL)writeUInt64LittleEndian:(uint64_t)ui64 error:(NSError **)error NS_REFINED_FOR_SWIFT;
 @end
 
-#pragma mark - Error Information
+// MARK: - Error Information
 
 /// The `NSErrorDomain` used by `SFBOutputSource` and subclasses
 extern NSErrorDomain const SFBOutputSourceErrorDomain NS_SWIFT_NAME(OutputSource.ErrorDomain);
 
 /// Possible `NSError` error codes used by `SFBOutputSource`
-typedef NS_ERROR_ENUM(SFBOutputSourceErrorDomain, SFBOutputSourceErrorCode) {
-	/// File not found
-	SFBOutputSourceErrorCodeFileNotFound 	= 0,
-	/// Input/output error
-	SFBOutputSourceErrorCodeInputOutput 	= 1,
+typedef NS_ERROR_ENUM(SFBOutputSourceErrorDomain, SFBOutputSourceErrorCode){
+    /// File not found
+    SFBOutputSourceErrorCodeFileNotFound = 0,
+    /// Input/output error
+    SFBOutputSourceErrorCodeInputOutput = 1,
 } NS_SWIFT_NAME(OutputSource.Error);
 
 NS_ASSUME_NONNULL_END

@@ -1,14 +1,15 @@
 //
-// Copyright (c) 2010-2026 Stephen F. Booth <me@sbooth.org>
+// SPDX-FileCopyrightText: 2010 Stephen F. Booth <contact@sbooth.dev>
+// SPDX-License-Identifier: MIT
+//
 // Part of https://github.com/sbooth/SFBAudioEngine
-// MIT license
 //
 
-#import <memory>
+#import "SFBAudioMetadata.h"
 
 #import <taglib/xiphcomment.h>
 
-#import "SFBAudioMetadata.h"
+#import <memory>
 
 NS_ASSUME_NONNULL_BEGIN
 

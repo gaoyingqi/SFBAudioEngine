@@ -1,18 +1,18 @@
 //
-// Copyright (c) 2006-2026 Stephen F. Booth <me@sbooth.org>
-// Part of https://github.com/sbooth/SFBAudioEngine
-// MIT license
+// SPDX-FileCopyrightText: 2006 Stephen F. Booth <contact@sbooth.dev>
+// SPDX-License-Identifier: MIT
 //
+// Part of https://github.com/sbooth/SFBAudioEngine
+//
+
+#import "AudioPlayer.h"
+#import "SFBAudioPlayer.h"
 
 #import <memory>
 
-#import "SFBAudioPlayer.h"
-#import "AudioPlayer.h"
-
-@interface SFBAudioPlayer ()
-{
-@package
-	/// The underlying AudioPlayer instance
-	sfb::AudioPlayer::unique_ptr _player;
+@interface SFBAudioPlayer () {
+  @package
+    /// The underlying AudioPlayer instance
+    sfb::AudioPlayer::unique_ptr _player;
 }
 @end
