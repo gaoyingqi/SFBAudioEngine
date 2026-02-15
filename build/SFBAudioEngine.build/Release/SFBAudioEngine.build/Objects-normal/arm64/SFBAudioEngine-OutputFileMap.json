@@ -1,0 +1,56 @@
+{
+  "" : {
+    "const-values" : "/Volumes/work/documents/PureMusicPlayer_back/.worktrees/SFBAudioEngine/build/SFBAudioEngine.build/Release/SFBAudioEngine.build/Objects-normal/arm64/SFBAudioEngine-primary.swiftconstvalues",
+    "dependencies" : "/Volumes/work/documents/PureMusicPlayer_back/.worktrees/SFBAudioEngine/build/SFBAudioEngine.build/Release/SFBAudioEngine.build/Objects-normal/arm64/SFBAudioEngine-primary.d",
+    "diagnostics" : "/Volumes/work/documents/PureMusicPlayer_back/.worktrees/SFBAudioEngine/build/SFBAudioEngine.build/Release/SFBAudioEngine.build/Objects-normal/arm64/SFBAudioEngine-primary.dia",
+    "emit-module-dependencies" : "/Volumes/work/documents/PureMusicPlayer_back/.worktrees/SFBAudioEngine/build/SFBAudioEngine.build/Release/SFBAudioEngine.build/Objects-normal/arm64/SFBAudioEngine-primary-emit-module.d",
+    "emit-module-diagnostics" : "/Volumes/work/documents/PureMusicPlayer_back/.worktrees/SFBAudioEngine/build/SFBAudioEngine.build/Release/SFBAudioEngine.build/Objects-normal/arm64/SFBAudioEngine-primary-emit-module.dia",
+    "pch" : "/Volumes/work/documents/PureMusicPlayer_back/.worktrees/SFBAudioEngine/build/SFBAudioEngine.build/Release/SFBAudioEngine.build/Objects-normal/arm64/SFBAudioEngine-primary-Bridging-header.pch",
+    "swift-dependencies" : "/Volumes/work/documents/PureMusicPlayer_back/.worktrees/SFBAudioEngine/build/SFBAudioEngine.build/Release/SFBAudioEngine.build/Objects-normal/arm64/SFBAudioEngine-primary.swiftdeps"
+  },
+  "/Volumes/work/documents/SFBAudioEngine/Sources/SFBAudioEngine/SFBAudioEngine.swift" : {
+    "index-unit-output-path" : "/SFBAudioEngine.build/Release/SFBAudioEngine.build/Objects-normal/arm64/SFBAudioEngine.o",
+    "llvm-bc" : "/Volumes/work/documents/PureMusicPlayer_back/.worktrees/SFBAudioEngine/build/SFBAudioEngine.build/Release/SFBAudioEngine.build/Objects-normal/arm64/SFBAudioEngine.bc",
+    "object" : "/Volumes/work/documents/PureMusicPlayer_back/.worktrees/SFBAudioEngine/build/SFBAudioEngine.build/Release/SFBAudioEngine.build/Objects-normal/arm64/SFBAudioEngine.o"
+  },
+  "/Volumes/work/documents/SFBAudioEngine/Sources/SFBAudioEngine/SFBAudioMetadata.swift" : {
+    "index-unit-output-path" : "/SFBAudioEngine.build/Release/SFBAudioEngine.build/Objects-normal/arm64/SFBAudioMetadata.o",
+    "llvm-bc" : "/Volumes/work/documents/PureMusicPlayer_back/.worktrees/SFBAudioEngine/build/SFBAudioEngine.build/Release/SFBAudioEngine.build/Objects-normal/arm64/SFBAudioMetadata.bc",
+    "object" : "/Volumes/work/documents/PureMusicPlayer_back/.worktrees/SFBAudioEngine/build/SFBAudioEngine.build/Release/SFBAudioEngine.build/Objects-normal/arm64/SFBAudioMetadata.o"
+  },
+  "/Volumes/work/documents/SFBAudioEngine/Sources/SFBAudioEngine/SFBAudioPlayer.swift" : {
+    "index-unit-output-path" : "/SFBAudioEngine.build/Release/SFBAudioEngine.build/Objects-normal/arm64/SFBAudioPlayer.o",
+    "llvm-bc" : "/Volumes/work/documents/PureMusicPlayer_back/.worktrees/SFBAudioEngine/build/SFBAudioEngine.build/Release/SFBAudioEngine.build/Objects-normal/arm64/SFBAudioPlayer.bc",
+    "object" : "/Volumes/work/documents/PureMusicPlayer_back/.worktrees/SFBAudioEngine/build/SFBAudioEngine.build/Release/SFBAudioEngine.build/Objects-normal/arm64/SFBAudioPlayer.o"
+  },
+  "/Volumes/work/documents/SFBAudioEngine/Sources/SFBAudioEngine/SFBAudioProperties.swift" : {
+    "index-unit-output-path" : "/SFBAudioEngine.build/Release/SFBAudioEngine.build/Objects-normal/arm64/SFBAudioProperties.o",
+    "llvm-bc" : "/Volumes/work/documents/PureMusicPlayer_back/.worktrees/SFBAudioEngine/build/SFBAudioEngine.build/Release/SFBAudioEngine.build/Objects-normal/arm64/SFBAudioProperties.bc",
+    "object" : "/Volumes/work/documents/PureMusicPlayer_back/.worktrees/SFBAudioEngine/build/SFBAudioEngine.build/Release/SFBAudioEngine.build/Objects-normal/arm64/SFBAudioProperties.o"
+  },
+  "/Volumes/work/documents/SFBAudioEngine/Sources/SFBAudioEngine/SFBInputSource.swift" : {
+    "index-unit-output-path" : "/SFBAudioEngine.build/Release/SFBAudioEngine.build/Objects-normal/arm64/SFBInputSource.o",
+    "llvm-bc" : "/Volumes/work/documents/PureMusicPlayer_back/.worktrees/SFBAudioEngine/build/SFBAudioEngine.build/Release/SFBAudioEngine.build/Objects-normal/arm64/SFBInputSource.bc",
+    "object" : "/Volumes/work/documents/PureMusicPlayer_back/.worktrees/SFBAudioEngine/build/SFBAudioEngine.build/Release/SFBAudioEngine.build/Objects-normal/arm64/SFBInputSource.o"
+  },
+  "/Volumes/work/documents/SFBAudioEngine/Sources/SFBAudioEngine/SFBOutputSource.swift" : {
+    "index-unit-output-path" : "/SFBAudioEngine.build/Release/SFBAudioEngine.build/Objects-normal/arm64/SFBOutputSource.o",
+    "llvm-bc" : "/Volumes/work/documents/PureMusicPlayer_back/.worktrees/SFBAudioEngine/build/SFBAudioEngine.build/Release/SFBAudioEngine.build/Objects-normal/arm64/SFBOutputSource.bc",
+    "object" : "/Volumes/work/documents/PureMusicPlayer_back/.worktrees/SFBAudioEngine/build/SFBAudioEngine.build/Release/SFBAudioEngine.build/Objects-normal/arm64/SFBOutputSource.o"
+  },
+  "/Volumes/work/documents/SFBAudioEngine/Sources/SFBAudioEngine/SFBPlaybackPosition.swift" : {
+    "index-unit-output-path" : "/SFBAudioEngine.build/Release/SFBAudioEngine.build/Objects-normal/arm64/SFBPlaybackPosition.o",
+    "llvm-bc" : "/Volumes/work/documents/PureMusicPlayer_back/.worktrees/SFBAudioEngine/build/SFBAudioEngine.build/Release/SFBAudioEngine.build/Objects-normal/arm64/SFBPlaybackPosition.bc",
+    "object" : "/Volumes/work/documents/PureMusicPlayer_back/.worktrees/SFBAudioEngine/build/SFBAudioEngine.build/Release/SFBAudioEngine.build/Objects-normal/arm64/SFBPlaybackPosition.o"
+  },
+  "/Volumes/work/documents/SFBAudioEngine/Sources/SFBAudioEngine/SFBPlaybackTime.swift" : {
+    "index-unit-output-path" : "/SFBAudioEngine.build/Release/SFBAudioEngine.build/Objects-normal/arm64/SFBPlaybackTime.o",
+    "llvm-bc" : "/Volumes/work/documents/PureMusicPlayer_back/.worktrees/SFBAudioEngine/build/SFBAudioEngine.build/Release/SFBAudioEngine.build/Objects-normal/arm64/SFBPlaybackTime.bc",
+    "object" : "/Volumes/work/documents/PureMusicPlayer_back/.worktrees/SFBAudioEngine/build/SFBAudioEngine.build/Release/SFBAudioEngine.build/Objects-normal/arm64/SFBPlaybackTime.o"
+  },
+  "/Volumes/work/documents/SFBAudioEngine/Sources/SFBAudioEngine/SFBReplayGainAnalyzer.swift" : {
+    "index-unit-output-path" : "/SFBAudioEngine.build/Release/SFBAudioEngine.build/Objects-normal/arm64/SFBReplayGainAnalyzer.o",
+    "llvm-bc" : "/Volumes/work/documents/PureMusicPlayer_back/.worktrees/SFBAudioEngine/build/SFBAudioEngine.build/Release/SFBAudioEngine.build/Objects-normal/arm64/SFBReplayGainAnalyzer.bc",
+    "object" : "/Volumes/work/documents/PureMusicPlayer_back/.worktrees/SFBAudioEngine/build/SFBAudioEngine.build/Release/SFBAudioEngine.build/Objects-normal/arm64/SFBReplayGainAnalyzer.o"
+  }
+}

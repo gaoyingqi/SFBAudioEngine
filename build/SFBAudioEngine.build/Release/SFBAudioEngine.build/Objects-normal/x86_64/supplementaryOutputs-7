@@ -1,0 +1,12 @@
+{
+  "/Volumes/work/documents/SFBAudioEngine/Sources/SFBAudioEngine/SFBAudioEngine.swift" : {
+    "abi-baseline-json" : "/Volumes/work/documents/PureMusicPlayer_back/.worktrees/SFBAudioEngine/build/SFBAudioEngine.build/Release/SFBAudioEngine.build/Objects-normal/x86_64/SFBAudioEngine.abi.json",
+    "const-values" : "/Volumes/work/documents/PureMusicPlayer_back/.worktrees/SFBAudioEngine/build/SFBAudioEngine.build/Release/SFBAudioEngine.build/Objects-normal/x86_64/SFBAudioEngine-primary.swiftconstvalues",
+    "dependencies" : "/Volumes/work/documents/PureMusicPlayer_back/.worktrees/SFBAudioEngine/build/SFBAudioEngine.build/Release/SFBAudioEngine.build/Objects-normal/x86_64/SFBAudioEngine-primary.d",
+    "diagnostics" : "/Volumes/work/documents/PureMusicPlayer_back/.worktrees/SFBAudioEngine/build/SFBAudioEngine.build/Release/SFBAudioEngine.build/Objects-normal/x86_64/SFBAudioEngine-primary.dia",
+    "objc-header" : "/Volumes/work/documents/PureMusicPlayer_back/.worktrees/SFBAudioEngine/build/SFBAudioEngine.build/Release/SFBAudioEngine.build/Objects-normal/x86_64/SFBAudioEngine-Swift.h",
+    "swiftdoc" : "/Volumes/work/documents/PureMusicPlayer_back/.worktrees/SFBAudioEngine/build/SFBAudioEngine.build/Release/SFBAudioEngine.build/Objects-normal/x86_64/SFBAudioEngine.swiftdoc",
+    "swiftmodule" : "/Volumes/work/documents/PureMusicPlayer_back/.worktrees/SFBAudioEngine/build/SFBAudioEngine.build/Release/SFBAudioEngine.build/Objects-normal/x86_64/SFBAudioEngine.swiftmodule",
+    "swiftsourceinfo" : "/Volumes/work/documents/PureMusicPlayer_back/.worktrees/SFBAudioEngine/build/SFBAudioEngine.build/Release/SFBAudioEngine.build/Objects-normal/x86_64/SFBAudioEngine.swiftsourceinfo"
+  }
+}

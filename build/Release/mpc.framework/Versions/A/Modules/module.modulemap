@@ -1,0 +1,17 @@
+framework module mpc {
+	requires c99
+
+	module dec {
+		header "mpc_types.h"
+		header "mpcdec.h"
+		header "reader.h"
+		header "streaminfo.h"
+		export *
+	}
+
+	module enc {
+		header "libmpcenc.h"
+		header "stream_encoder.h"
+		export *
+	}
+}

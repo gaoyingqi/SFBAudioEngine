@@ -1,0 +1,4 @@
+module SFBAudioEngine {
+header "SFBAudioEngine-Swift.h"
+export *
+}
