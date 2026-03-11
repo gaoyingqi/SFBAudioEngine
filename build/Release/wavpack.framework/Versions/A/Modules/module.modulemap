@@ -1,4 +1,0 @@
-framework module wavpack {
-	header "wavpack.h"
-	export *
-}

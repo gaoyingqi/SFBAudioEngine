@@ -1,4 +1,0 @@
-module CSFBAudioEngine {
-umbrella "../../Sources/CSFBAudioEngine/include"
-export *
-}
