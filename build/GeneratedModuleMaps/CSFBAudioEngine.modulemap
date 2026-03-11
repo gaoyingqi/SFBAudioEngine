@@ -1,4 +1,4 @@
 module CSFBAudioEngine {
-umbrella "/Volumes/work/documents/PureMusicPlayer_back/.worktrees/SFBAudioEngine/Sources/CSFBAudioEngine/include"
+umbrella "../../Sources/CSFBAudioEngine/include"
 export *
 }
