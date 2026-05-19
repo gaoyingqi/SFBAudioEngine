@@ -2207,6 +2207,8 @@ void sfb::AudioPlayer::handleAudioEngineConfigurationChange(AVAudioEngine *engin
     // AVAudioEngine posts this notification from a dedicated internal dispatch queue
     os_log_debug(log_, "Received AVAudioEngineConfigurationChangeNotification");
 
+    NSError *configurationChangeError = nil;
+
     // The output hardware’s channel count or sample rate changed
     {
         std::unique_lock lock{engineMutex_};
@@ -2244,12 +2246,37 @@ void sfb::AudioPlayer::handleAudioEngineConfigurationChange(AVAudioEngine *engin
                          stringDescribingAVAudioFormat(outputNodeOutputFormat));
 #endif /* DEBUG */
 
-            [engine_ disconnectNodeInput:outputNode bus:0];
+            @try {
+                [engine_ disconnectNodeInput:outputNode bus:0];
 
-            // Reconnect the mixer and output nodes using the output node's output format
-            [engine_ connect:mixerNode to:outputNode format:outputNodeOutputFormat];
+                // Reconnect the mixer and output nodes using the output node's output format
+                [engine_ connect:mixerNode to:outputNode format:outputNodeOutputFormat];
 
-            [engine_ prepare];
+                [engine_ prepare];
+            } @catch (NSException *exception) {
+                // 简体中文注释：系统音频设备变化时 AVAudioEngine 可能抛 ObjC 异常，不能让异常穿过 noexcept 边界。
+                os_log_error(log_, "Error reconfiguring AVAudioEngine after configuration change: %{public}@",
+                             exception);
+                [engine_ stop];
+                clearFlags(Flags::engineIsRunning | Flags::isPlaying);
+
+                configurationChangeError = [NSError
+                        errorWithDomain:SFBAudioPlayerErrorDomain
+                                   code:SFBAudioPlayerErrorCodeInternalError
+                               userInfo:@{
+                                   NSLocalizedDescriptionKey : exception.reason ?: @"AVAudioEngine configuration change failed",
+                                   @"NSExceptionName" : exception.name ?: @"",
+                                   @"NSExceptionReason" : exception.reason ?: @""
+                               }];
+            }
+            if (configurationChangeError != nil) {
+                lock.unlock();
+                if (__strong id<SFBAudioPlayerDelegate> delegate = player_.delegate;
+                    delegate != nil && [delegate respondsToSelector:@selector(audioPlayer:encounteredError:)]) {
+                    [delegate audioPlayer:player_ encounteredError:configurationChangeError];
+                }
+                return;
+            }
         }
 
         // Restart AVAudioEngine if previously running
