@@ -13,6 +13,7 @@
 #import <mpg123/mpg123.h>
 
 #import <os/log.h>
+#import <objc/message.h>
 
 SFBAudioDecoderName const SFBAudioDecoderNameMPEG = @"org.sbooth.AudioEngine.Decoder.MPEG";
 
@@ -346,7 +347,15 @@ static BOOL contains_mp3_sync_word_and_minimal_valid_frame_header(const unsigned
     _sourceFormat = [[AVAudioFormat alloc] initWithStreamDescription:&sourceStreamDescription
                                                        channelLayout:channelLayout];
 
-    if (_inputSource.supportsSeeking && mpg123_scan(_mpg123) != MPG123_OK) {
+    // 简体中文注释：允许 streaming InputSource 跳过全文件扫描，实现即时启播。
+    // 扫描仅用于精确 seeking；跳过后 seeking 使用 bitrate 近似定位（同 Chrome 行为）。
+    BOOL shouldScan = _inputSource.supportsSeeking;
+    // 简体中文注释：用 objc_msgSend + 正确签名的函数指针，避免 performSelector: 把 BOOL 标量误包装为 id 导致 EXC_BAD_ACCESS。
+    if (shouldScan && [_inputSource respondsToSelector:@selector(shouldSkipDecoderScan)]) {
+        BOOL (*msgSend)(id, SEL) = (BOOL (*)(id, SEL))objc_msgSend;
+        shouldScan = !msgSend(_inputSource, @selector(shouldSkipDecoderScan));
+    }
+    if (shouldScan && mpg123_scan(_mpg123) != MPG123_OK) {
         mpg123_close(_mpg123);
         mpg123_delete(_mpg123);
         _mpg123 = NULL;
